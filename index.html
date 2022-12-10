@@ -7,24 +7,60 @@
   <meta name="description" content="Brand Powered AI">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-.5 1 7 7' %3E%3Cpath stroke-width='1.8' stroke-linecap='square' d='m5 1-2 5-2-5' stroke='rgb(94%25 9%25 63%25)' fill='none' /%3E%3C/svg%3E">
  <style>
-   body {
-     overflow:hidden;
-     margin: 0;
-     background-color: black;
-     color: white;
-     min-height:100vh;
-     display:grid;
-     place-content:center;}
+ body {
+  overflow: hidden;
+  margin: 0;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
 
-   .mark { 
-     width: 50vw; 
-     height: 50vh;
-     stroke:url(#lg); 
-     fill:none;
-     stroke-width:1.76;
-     stroke-linecap:square;
-     color:rgb(94% 9% 63%);
-   }
+.mark {
+  z-index: 9;
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  stroke: url(#lg);
+  fill: none;
+  stroke-width: 1.76;
+  stroke-linecap: square;
+  color: rgb(94% 9% 63%);
+}
+
+$brand: rgb(55% 0% 30%);
+
+.grid {
+  top: -20vh;
+  bottom: -20vh;
+  left: -20vw;
+  right: -20vw;
+  position: absolute;
+  background-image: 
+    linear-gradient($brand 0.1em, transparent 0.5em), 
+    linear-gradient(90deg, $brand 0.1em, transparent 0.5em);
+  background-size: 2% 4%, 2% 4%;
+  backround-position: 0 0, 0 0;
+  transform: perspective(250px) rotateX(80deg);
+  animation: intofuture 1s linear infinite;
+}
+
+@keyframes intofuture {
+  0% {transform: perspective(250px) rotateX(80deg) translateY(0%);}
+  100% {transform: perspective(250px) rotateX(80deg) translateY(4%);}
+}
+
+.grid:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80vh;
+  background-image: linear-gradient(#000 60%, transparent 100%);
+}
   </style>
 </head>
 <body>
@@ -44,5 +80,7 @@
     <circle cx="17.8" cy="3" r="1" fill="url(#lg)" stroke="none"/>
     <path d="m23.5 6-2-5-2 5"  />
     <path d="m24.5 1 2 5"  />
-</svg></body>
+</svg>
+<div class="grid"></div>
+  </body>
 </html>
