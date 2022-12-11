@@ -18,13 +18,12 @@
   background-color: black;
   color: white;
   min-height: 100vh;
-  display: grid;
-  place-content: center;
 }
 
 .mark {
   z-index: 9;
-  position: relative;
+  position: absolute;
+  top: 25vh; left: 25vw; bottom:25vh; right:25vw;
   width: 50vw;
   height: 50vh;
   stroke: url(#lg);
@@ -70,7 +69,7 @@
   </style>
 </head>
 <body>
-<svg viewBox="-1 0 33 7" class="mark">
+<svg viewBox="-1 0 30 7" class="mark">
   <defs><clipPath id="bb"><path fill="currentColor" d="M-.5.5h30v6h-30z"/></clipPath>
     <linearGradient gradientTransform="rotate(75)" id="lg">
       <stop offset="0%" stop-color="rgb(70% 4% 45%)" /> 
