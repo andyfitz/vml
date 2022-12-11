@@ -21,9 +21,9 @@
 }
 
 .mark {
-  z-index: 9;
+  z-index: 99;
   position: absolute;
-  top: 20vh; left: 25vw; bottom:30vh; right:25vw;
+  top: 10vh; left: 25vw; bottom:40vh; right:25vw;
   width: 50vw;
   height: 50vh;
   stroke: url(#lg);
@@ -36,7 +36,7 @@
 
 
 .grid {
-  z-index:0;
+  z-index:-1;
   top: -20vh;
   bottom: -20vh;
   left: -20vw;
@@ -60,6 +60,7 @@
   content: "";
   display: block;
   position: absolute;
+  z-index:1;
   top: 0;
   left: 0;
   right: 0;
