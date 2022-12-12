@@ -12,13 +12,20 @@
 :root{
   --brand: rgb(55% 0% 30%);
 }
- body {
+*,*:before,*:after{box-sizing:border-box;}
+
+body {
+  font-family: sans-serif;
   overflow: hidden;
   margin: 0;
   background-color: black;
   color: white;
   min-height: 100vh;
+  text-align:center;
 }
+
+@media (orientation: landscape) {body{font-size:4vh;}}
+@media (orientation: portrait) {body{font-size:4vw;}}
 
 .mark {
   z-index: 99;
@@ -36,13 +43,12 @@
 }
 
 
+
 @keyframes thedrop{
-  0%{filter: contrast(0) brightness(2) ; transform: scale(.5) translate(0,10%) }
- 
+0%{filter: contrast(0) brightness(2) ; transform: scale(.5) translate(0,10%) } 
 90%{transform: scale(1) translate(0,-15%)}
 95%{transform: scale(1) translate(0,5%)}
 }
-
 
 .grid {
   z-index:-1;
@@ -76,7 +82,131 @@
   height: 100vh;
   background-image: linear-gradient(#000 10%, transparent 100%);
 }
+form {
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  bottom: 0vh;
+  top: 60vh;
+  left: 5vw;
+  right: 5vw;
+
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  animation: comegetsome 1s ease forwards 2s;
+}
+
+@keyframes comegetsome {
+  0% {
+    opacity: 1;
+    filter: contrast(0) brightness(2);
+    transform: translate(0, 10%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+input {
+  text-align: center;
+  background: rgba(240, 23, 161, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 22em;
+  min-width: 20em;
+  line-height: 4em;
+}
+
+form,
+button,
+input {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+button,
+input {
+  box-shadow: 0 0 0 0.2em var(--brand);
+  color: white;
+  box-shadow: inset 0 0 2px 1px var(--brand), 0 0 2px 2px var(--brand),
+    0 0 3em var(--brand);
+  appearance: none;
+  border: 0;
+  padding: 0em;
+  margin: 0;
+  font-size: 1em;
+}
+button:focus,
+input:focus {
+  outline: none;
+
+  box-shadow: inset 0 0 2px 1px rgb(70% 4% 45%), 0 0 3px 3px rgb(70% 4% 45%),
+    0 0 4em var(--brand);
+  z-index: 1;
+  position: relative;
+}
+
+input:focus {
+  background: rgba(240, 23, 161, 0);
+}
+
+form div {
+  position: relative;
+  display: grid;
+}
+
+label {
+  position: absolute;
+  left: 0em;
+  cursor: pointer;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 3;
+  line-height: 4em;
+  transition: all 0.2s ease;
+}
+
+#email:not(:placeholder-shown) ~ label,
+#email:valid ~ label,
+#email:focus ~ label {
+  transform: scale(0.75) translate(0, 5em);
+}
+#email:valid ~ label {
+  opacity: 0;
+}
+
+[type="submit"] {
+  height: 4em;
+  line-height: 4em;
+  transition: opacity 0.5s ease-out;
+  cursor: pointer;
+  width: 100%;
+  background-color: var(--brand);
+  box-shadow: inset 0 0 2px 1px rgb(70% 4% 45%), 0 0 3px 3px rgb(70% 4% 45%),
+    0 0 4em var(--brand);
+
+  background-image: linear-gradient(
+    -183deg,
+    rgb(70% 4% 45%) 0%,
+    rgb(98% 12% 65%) 50%,
+    rgb(73% 0% 43%) 50%,
+    rgb(84% 0% 53%) 100%
+  );
+}
+
+[type="submit"]:focus {
+  background-color: rgb(70% 4% 45%);
+  box-shadow: inset 0 0 2px 1px rgb(250% 204% 245%), 0 0 3px 3px rgb(70% 4% 45%),
+    0 0 4em var(--brand);
+}
+
+#email:not(:valid) ~ [type="submit"] {
+  opacity: 0;
+}
   </style>
+
+
 </head>
 <body>
 <svg viewBox="-1 0 30 7" class="mark">
@@ -97,5 +227,15 @@
     <path d="m24.5 1 2 5"  />
 </svg>
 <div class="grid"></div>
+
+<form method="post" action="https://forms.un-static.com/forms/19107ed04585139813bf289d01ee6694dd9f3864">
+  <div>
+   <input type="email" id="email" name="email" placeholder=""  required>
+     <label for="email">Enter your email</label>
+  <button type="submit">Join the waitlist</button>
+ </div>
+
+
+</form>
   </body>
 </html>

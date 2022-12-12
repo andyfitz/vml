@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Machine Learning</title>
+  <meta name="description" content="Brand Powered AI">
+  <meta property="og:image" content="https://vml.ai/ogimage.png" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-.5 1 7 7' %3E%3Cpath stroke-width='1.8' stroke-linecap='square' d='m5 1-2 5-2-5' stroke='rgb(94%25 9%25 63%25)' fill='none' /%3E%3C/svg%3E">
+ <style>
+
+:root{
+  --brand: rgb(55% 0% 30%);
+}
+ body {
+  overflow: hidden;
+  margin: 0;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+.mark {
+  z-index: 99;
+  position: absolute;
+  top: 10vh; left: 15vw; bottom:40vh; right:15vw;
+  width: 70vw;
+  height: 50vh;
+  stroke: url(#lg);
+  fill: none;
+  stroke-width: 1.76;
+  stroke-linecap: square;
+  color: rgb(94% 9% 63%);
+}
+
+
+
+
+.grid {
+  z-index:-1;
+  top: -20vh;
+  bottom: -20vh;
+  left: -20vw;
+  right: -20vw;
+  position: absolute;
+  background-image: 
+    linear-gradient( transparent 0em, var(--brand) 0.1em, transparent 0.2em), 
+    linear-gradient(90deg, transparent 0em, var(--brand) 0.1em, transparent 0.2em);
+  background-size: 2% 4%, 2% 4%;
+  backround-position: 0 0, 0 0;
+  transform: perspective(250px) rotateX(80deg);
+  animation: intofuture 1s linear infinite;
+}
+
+@keyframes intofuture {
+  0% {transform: perspective(250px) rotateX(80deg) translateY(0%);}
+  100% {transform: perspective(250px) rotateX(80deg) translateY(4%);}
+}
+
+.grid:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index:8;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-image: linear-gradient(#000 10%, transparent 100%);
+}
+  </style>
+</head>
+<body>
+<svg viewBox="-1 0 30 7" class="mark">
+  <defs><clipPath id="bb"><path fill="currentColor" d="M-.5.5h30v6h-30z"/></clipPath>
+    <linearGradient gradientTransform="rotate(75)" id="lg">
+      <stop offset="0%" stop-color="rgb(70% 4% 45%)" /> 
+      <stop offset="65%" stop-color="rgb(98% 12% 65%)" /> 
+      <stop offset="65%" stop-color="rgb(73% 0% 43%)" /> 
+      <stop offset="105%" stop-color="rgb(84% 0% 53%)" /> 
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#bb)">
+    <path d="m5 1-2 5-2-5" />
+    <path d="m6 6 2-5 1.5 3 1.5-3 2 5" />
+    <path d="m14 1 2 5h2" />
+    <circle cx="17.8" cy="3" r="1" fill="url(#lg)" stroke="none"/>
+    <path d="m23.5 6-2-5-2 5"  />
+    <path d="m24.5 1 2 5"  />
+</svg>
+<div class="grid"></div>
+  </body>
+</html>
