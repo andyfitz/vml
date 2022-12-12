@@ -133,6 +133,8 @@ input {
 }
 button,
 input {
+  cursor: pointer;
+
   box-shadow: 0 0 0 0.2em var(--brand);
   color: white;
   box-shadow: inset 0 0 2px 1px var(--brand), 0 0 2px 2px var(--brand),
@@ -167,6 +169,7 @@ label {
   position: absolute;
   left: 0em;
   cursor: pointer;
+  pointer-events::none;
   right: 0;
   text-align: center;
   width: 100%;
