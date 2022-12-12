@@ -14,6 +14,12 @@
 }
 *,*:before,*:after{box-sizing:border-box;}
 
+
+::selection {
+    color: white;
+    background-color: var(--brand);
+}
+
 body {
   touch-action: none;
   font-family: sans-serif;
@@ -21,8 +27,9 @@ body {
   margin: 0;
   background-color: black;
   color: white;
-  min-height: 100vh;
+  height: 100vh;
   text-align:center;
+  background-image:linear-gradient(  var(--brand) -40%, black 30%);
 }
 
 @media (orientation: landscape) {body{font-size:4vh;}
@@ -51,16 +58,18 @@ body {
   color: rgb(94% 9% 63%);
   animation: thedrop 1s linear forwards;
 }
-.mark:before{content:""; display:block;  background-position: 50% 50%;position:absolute; top:0; right:-1.5vw; left:1.5vw; bottom:3vh;
-filter: blur(1em);  mix-blend-mode: color-dodge;opacity:.95; background-repeat: no-repeat;z-index:-1;}
+.mark:before{content:""; display:block;  background-position: 50% 50%;position:absolute; top:0; right:-.5vw; left:-1vw; bottom:3vh;
+filter: blur(1em);  mix-blend-mode: screen;opacity:.85; background-repeat: no-repeat;z-index:-1;}
 
 
 
 
 @keyframes thedrop{
 0%{filter: contrast(0) brightness(2) ; transform: scale(.5) translate(0,10%) } 
-90%{transform: scale(1) translate(0,-15%)}
+85%{transform: scale(1) translate(0,-12%); filter:none;}
+91%{filter: contrast(0) brightness(2) ;  }
 95%{transform: scale(1) translate(0,5%)}
+100%{filter:  brightness(1.05) ;}
 }
 
 .grid, form, .mark{ transform-style: preserve-3d; -webkit-transform: translateZ(20000px);}
