@@ -41,7 +41,7 @@ body {
   stroke-linecap: square;
   color: rgb(94% 9% 63%);
   animation: thedrop 1s linear forwards;
-  animation-timing-function: steps(7, end);
+
 }
 
 
@@ -185,6 +185,7 @@ label {
 }
 #email:valid ~ label {
   opacity: 0;
+  z-index:-1;
 }
 
 [type="submit"] {
