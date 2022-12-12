@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
   <title>Visual Machine Learning</title>
   <meta name="description" content="Brand Powered AI">
   <meta property="og:image" content="https://vml.ai/ogimage.png" />
@@ -13,6 +13,7 @@
   --brand: rgb(55% 0% 30%);
 }
  body {
+    touch-action: none;
   overflow: hidden;
   margin: 0;
   background-color: black;
@@ -38,6 +39,7 @@
 
 .grid {
   z-index:-1;
+  pointer-events: none;
   top: -20vh;
   bottom: -20vh;
   left: -20vw;
