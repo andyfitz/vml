@@ -1,19 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 13.65 2.75">
  <defs>
-    <linearGradient id="hg" 
-      gradientTransform="rotate(76)">
-      <stop offset="-20%" stop-color="rgb(70% 4% 45%)"/>
-      <stop offset="55%" stop-color="rgb(98% 12% 65%)"/>
-      <stop offset="55%" stop-color="rgb(70% 4% 45%)"/>
-      <stop offset="100%" stop-color="rgb(98% 12% 65%)"/>
-
+<linearGradient gradientTransform="rotate(55)" id="hg">
+      <stop offset="0%" stop-color="rgb(70% 4% 45%)"></stop> 
+      <stop offset="65%" stop-color="rgb(98% 12% 65%)"></stop> 
+      <stop offset="65%" stop-color="rgb(73% 0% 43%)"></stop> 
+      <stop offset="105%" stop-color="rgb(84% 0% 53%)"></stop> 
     </linearGradient>
+
     <linearGradient id="vg" 
-      gradientTransform="rotate(100)">
-      <stop offset="0%" stop-color="rgb(63% 0% 35%)"/>
-      <stop offset="35%" stop-color="rgb(84% 0% 53%)"/>
-            <stop offset="35%" stop-color="rgb(57% 0% 33%)"/>
-            <stop offset="100%" stop-color="rgb(73% 0% 43%)"/>
+      gradientTransform="rotate(90)">
+            <stop offset="10%" stop-color="rgb(45% 0% 30%)"/>
+
+            <stop offset="80%" stop-color="rgb(73% 0% 43%)"/>
 
 
     </linearGradient>

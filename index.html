@@ -52,7 +52,7 @@ body {
   animation: thedrop 1s linear forwards;
 }
 .mark:before{content:""; display:block;  background-position: 50% 50%;position:absolute; top:-3vh; right:-1.5vw; left:1.5vw; bottom:3vh;
-filter: blur(30px);  mix-blend-mode: screen;opacity:.85; background-repeat: no-repeat;z-index:-1;}
+filter: blur(30px);  mix-blend-mode: color-dodge;opacity:.95; background-repeat: no-repeat;z-index:-1;}
 
 
 
@@ -112,7 +112,7 @@ form {
   display: grid;
   place-content: center;
   opacity: 0;
-  animation: comegetsome .5s ease-out forwards 12s;
+  animation: comegetsome .5s ease-out forwards 0s;
 }
 
 @keyframes comegetsome {
@@ -177,6 +177,7 @@ form div {
 }
 
 label {
+  text-shadow: 0 0 3em #fff,  0 0 1em #fff, 0 0 0.23em #fff;
   position: absolute;
   left: 0em;
   cursor: pointer;
@@ -200,6 +201,7 @@ label {
 }
 
 [type="submit"] {
+    text-shadow: 0 0 3em #fff,  0 0 1em #fff, 0 0 0.23em #fff;
   height: 4em;
   line-height: 4em;
   transition: opacity 0.5s ease-out;
