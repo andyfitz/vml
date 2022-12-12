@@ -31,8 +31,17 @@
   stroke-width: 1.76;
   stroke-linecap: square;
   color: rgb(94% 9% 63%);
+  animation: thedrop 1s linear forwards;
+  animation-timing-function: steps(7, end);
 }
 
+
+@keyframes thedrop{
+  0%{filter: contrast(0) brightness(2) ; transform: scale(.5) translate(0,10%) }
+ 
+90%{transform: scale(1) translate(0,-15%)}
+95%{transform: scale(1) translate(0,5%)}
+}
 
 
 .grid {
