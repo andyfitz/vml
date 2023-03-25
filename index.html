@@ -111,23 +111,6 @@ filter: blur(1em);  mix-blend-mode: screen;opacity:.85; background-repeat: no-re
   height: 100vh;
   background-image: linear-gradient(#000 10%, transparent 100%);
 }
-form {
-
-  -webkit-transform: translate3d(0,0,2);
-  margin: 0 auto;
-  display: block;
-  position: absolute;
-  bottom: 0vh;
-  top: 60vh;
-  left: 5vw;
-  right: 5vw;
-  z-index:99;
-  display: grid;
-  place-content: center;
-  opacity: 0;
-  animation: comegetsome .5s ease-out forwards 1s;
-}
-
 @keyframes comegetsome {
   0% {
     opacity: 1;
@@ -139,114 +122,6 @@ form {
   }
 }
 
-input {
-  text-align: center;
-  background: rgba(240, 23, 161, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  max-width: 22em;
-  min-width: 20em;
-  line-height: 4em;
-}
-
-form,
-button,
-input {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-button,
-input {
-  cursor: pointer;
-
-  box-shadow: 0 0 0 0.2em var(--brand);
-  color: white;
-  box-shadow: inset 0 0 2px 1px var(--brand), 0 0 2px 2px var(--brand),
-    0 0 3em var(--brand);
-  appearance: none;
-  border: 0;
-  padding: 0em;
-  margin: 0;
-  font-size: 1em;
-}
-button:focus,
-input:focus {
-  outline: none;
-
-  box-shadow: inset 0 0 2px 1px rgb(70% 4% 45%), 0 0 3px 3px rgb(70% 4% 45%),
-    0 0 4em var(--brand);
-  z-index: 1;
-  position: relative;
-}
-
-input:focus {
-  background: rgba(240, 23, 161, 0);
-}
-
-form div {
-  position: relative;
-  display: grid;
-  z-index:99;
-}
-
-label {
-  text-shadow: 0 0 3em #fff,  0 0 1em #fff, 0 0 0.23em #fff;
-  position: absolute;
-  left: 0em;
-  cursor: pointer;
-  pointer-events:none;
-  right: 0;
-  text-align: center;
-  width: 100%;
-  z-index: 3;
-  line-height: 4em;
-  transition: all 0.2s ease;
-}
-
-#email:not(:placeholder-shown) ~ label,
-#email:valid ~ label,
-#email:focus ~ label {
-  transform: scale(0.75) translate(0, 5em);
-}
-#email:valid ~ label {
-  opacity: 0;
-  z-index:-1;
-}
-
-[type="submit"] {
-    text-shadow: 0 0 3em #fff,  0 0 1em #fff, 0 0 0.23em #fff;
-  height: 4em;
-  line-height: 4em;
-  transition: opacity 0.5s ease-out;
-  cursor: pointer;
-  width: 100%;
-  background-color: var(--brand);
-  box-shadow: inset 0 0 2px 1px rgb(70% 4% 45%), 0 0 3px 3px rgb(70% 4% 45%),
-    0 0 4em var(--brand);
-
-  background-image: linear-gradient(
-    -183deg,
-    rgb(70% 4% 45%) 0%,
-    rgb(98% 12% 65%) 50%,
-    rgb(73% 0% 43%) 50%,
-    rgb(84% 0% 53%) 100%
-  );
-}
-
-[type="submit"]:focus {
-  background-color: rgb(70% 4% 45%);
-  box-shadow: inset 0 0 2px 1px rgb(250% 204% 245%), 0 0 3px 3px rgb(70% 4% 45%),
-    0 0 4em var(--brand);
-}
-
-[type="submit"]:active{background-color:white; background-image:none; color:black;}
-
-#email:not(:valid) ~ [type="submit"] {
-  opacity: 0;
-}
-
-
-
   </style>
 
 
@@ -254,26 +129,14 @@ label {
 <body>
 
 
-  
+
 <div class="mark"></div>
 
 
 <div class="grid"></div>
 
-<form  method="post" action="https://script.google.com/macros/s/AKfycbw1S7Q6axvHPb6ZgCeDly5LeTbOIs5LvgzfVZbVEEQfR7c2jmnjyjiZfnG4QPNwOxwu9A/exec">
-
-  <div id="output"></div>
-  <div>
-
-   <input type="email" id="email" name="Email" placeholder=""  required>
-     <label for="email">Email</label>
-  <button type="submit">Join the waitlist</button>
- </div>
-
-
-</form>
 
 
 
-  </body>
+</body>
 </html>
